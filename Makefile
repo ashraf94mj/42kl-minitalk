@@ -4,7 +4,7 @@ CLIENT	=	client
 LIBFT_PATH	=	libft
 
 CC		=	gcc
-CFLAGS	=	#-Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra
 RM 		= 	rm -rf
 
 all		: 	server client
@@ -15,7 +15,7 @@ server	:	lib
 			$(CC) $(CFLAGS)  $(SERVER:=.c) -o $(SERVER) -L$(LIBFT_PATH) -lft
 
 client	: 	lib
-			$(CC) $(CFLAGS)  $(CLIENT:=.c) -o $(SERVER) -L$(LIBFT_PATH) -lft
+			$(CC) $(CFLAGS)  $(CLIENT:=.c) -o $(CLIENT) -L$(LIBFT_PATH) -lft
 
 lib	:
 			make -C $(LIBFT_PATH)
