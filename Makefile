@@ -9,7 +9,7 @@ RM 		= 	rm -rf
 
 all		: 	server client
 
-bonus	:	server client
+bonus	:	all
 
 server	:	lib
 			$(CC) $(CFLAGS)  $(SERVER:=.c) -o $(SERVER) -L$(LIBFT_PATH) -lft
@@ -22,11 +22,11 @@ lib	:
 
 clean	:	
 			$(RM) -rf $(SERVER:.c=.o) $(CLIENT:.c=.o)
-			# make clean -C $(LIBFT_PATH)
+			make clean -C $(LIBFT_PATH)
 
 fclean	:	clean
 			$(RM) $(SERVER) $(CLIENT)
-			# make fclean -C $(LIBFT_PATH)
+			make fclean -C $(LIBFT_PATH)
 
 re		:	fclean all
 
